@@ -61,6 +61,10 @@ class ActionSwitchRoomLight(Action):
         return 'action_switch_room_light'
 
     def run(self, dispatcher, tracker, domain):
-        venues = tracker.get_slot("venues")
-        dispatcher.utter_message("venues from slots: {}".format(venues))
+        roomLight = tracker.get_slot("roomLight")
+
+        if roomLight:
+            print("turn off")
+        else:
+            print("turn on")
         return []
