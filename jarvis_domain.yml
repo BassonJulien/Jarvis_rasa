@@ -1,0 +1,39 @@
+slots:
+  name:
+    type: text
+  roomLight:
+    type: bool
+  loungeLight:
+    type: bool
+  roomFan:
+    type: bool
+
+entities:
+  - name
+
+intents:
+  - greet
+  - thankyou
+  - room_light_change
+  - room_fan_change
+  - lounge_light_change
+
+templates:
+  utter_greet:
+    - "Bonjour monsieur {name}"
+    - "Bien le bonjour monsieur {name}"
+  utter_goodbye:
+    - "Au revoir monsieur {name}"
+  utter_default:
+    - "default message"
+  utter_youarewelcome:
+    - "De rien monsieur"
+
+actions:
+  - utter_default
+  - utter_greet
+  - utter_goodbye
+  - utter_youarewelcome
+  - actions.ActionsSwitchRoomLight
+  - actions.ActionSwitchLoungeLight
+  - actions.ActionSwitchRoomFan
